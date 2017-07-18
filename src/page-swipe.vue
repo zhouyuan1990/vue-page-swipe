@@ -1,6 +1,6 @@
 <!-- <template>
   <div id="app">
-    <page-swipe-list :pages="pages" class="my-swipe">
+    <page-swipe-list :pages="pages">
       <page-swipe-item v-for="(page, $index) in pages"
                        slot="item"
                        :key="$index"
@@ -33,16 +33,18 @@ export default {
     }
   },
   render(createElement, context) {
-    let items = this.$slots['page-swipe-item'];
+    let items = this.$slots['page-swipe-item'],
+        length = items.length;
     return createElement(VuePageSwipeList, {
-      staticClass: 'my-swipe',
       props: {
         pages: items
       }
     }, items.map((item, $index) => {
       return createElement(VuePageSwipeItem, {
         props: {
-          curIdx: this.currentIndex
+          curIdx: this.currentIndex,
+          index: $index,
+          zIndex: length - $index
         },
         'class': 'item-' + $index,
         key: $index,

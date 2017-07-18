@@ -13,25 +13,15 @@ export default {
     curIdx: {
       type: Number,
       default: 0
-    }
-  },
-  data() {
-    return {
-      index: -1,
-      zIndex: 0
-    }
-  },
-  methods: {
-    initIndex() {
-      this.index = this.$parent.$slots.item.indexOf(this.$vnode);
     },
-    initZIndex() {
-      this.zIndex = this.$parent.$slots.item.length - this.index;
+    index: {
+      type: Number,
+      default: -1
+    },
+    zIndex: {
+      type: Number,
+      default: 0
     }
-  },
-  mounted() {
-    this.initIndex();
-    this.initZIndex();
   }
 }
 </script>

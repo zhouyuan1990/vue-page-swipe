@@ -1,7 +1,7 @@
 <template>
   <div class="page-swipe-list" tabindex="1" 
-       @mouseWheel="handleWheel"
-       @wheel="handleWheel"
+       @mouseWheel.prevent="handleWheel"
+       @wheel.prevent="handleWheel"
        @keydown="handleKeyDown">
     <ul class="main">
       <slot name="item"></slot>
@@ -67,8 +67,6 @@ export default {
       return Math.ceil(sum/number);
     },
     handleWheel(event) {
-      event.preventDefault();   //prevent page drag down in mac
-
       let curWheelTime = new Date().getTime();
       let timeDiff = curWheelTime - preWheelTime;
       preWheelTime = curWheelTime;
