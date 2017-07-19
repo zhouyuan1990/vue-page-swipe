@@ -88,8 +88,28 @@ export default {
       }
     },
     handleKeyDown(event) {
-      console.log('keydown');
-      console.log(event);
+      if (this.isMoving()) return;
+
+      switch(event.keyCode) {
+        case 38:  //ArrowUp
+        case 33:  //PageUp
+        case 37:  //ArrowLeft
+            this.prev();
+            break;
+        case 40:  //ArrowDown
+        case 34:  //PageDown
+        case 39:  //ArrowRight
+            this.next()
+            break;
+        case 36:  //Home
+            this.moveTo(0);
+            break;
+        case 35:  //End
+            this.moveTo(this.pages.length - 1);
+            break;
+        default:
+            return;
+      }
     },
     next() {
       if (this.index < this.pages.length - 1) {
@@ -103,7 +123,6 @@ export default {
     },
     moveTo(index) {
       if (!this.isMoving() && index != this.index) {
-        console.log('moveTo:' + index);
         lastAnimationTime = new Date().getTime();
         this.index = index;
         this.$parent.passIndex(this.index);
