@@ -8,8 +8,7 @@
   </div>
 </template>
 <script>
-import { PageSwipe } from '../dist/vue-page-swipe.js';
-require('../dist/vue-page-swipe.css');
+import { PageSwipe } from '../dist/vue-page-swipe';
 // import PageSwipe from '../src/page-swipe.vue';
 
 export default {
