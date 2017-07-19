@@ -1,5 +1,5 @@
 <template>
-  <div class="page-swipe-list" tabindex="1" 
+  <div class="page-swipe-list" tabindex="1"
        @mouseWheel.prevent="handleWheel"
        @wheel.prevent="handleWheel"
        @keydown="handleKeyDown">
@@ -11,7 +11,7 @@
           v-for="(page, $index) in pages"
           :class="{ 'is-active': $index === index }"
           :key="$index">
-        <a @click="moveTo($index)"></a>      
+        <a @click="moveTo($index)"></a>
         <div>{{ page.data.attrs['swipe-title'] }}</div>
       </li>
     </ul>
@@ -36,6 +36,10 @@ export default {
       default: function() {
         return [];
       }
+    },
+    passIndex: {
+      type: Function,
+      default: function () {}
     }
   },
   methods: {
@@ -125,7 +129,8 @@ export default {
       if (!this.isMoving() && index != this.index) {
         lastAnimationTime = new Date().getTime();
         this.index = index;
-        this.$parent.passIndex(this.index);
+        this.passIndex && this.passIndex(this.index);
+        // this.$parent.passIndex(this.index);
       }
     }
   }
