@@ -35,12 +35,13 @@ export default {
   render(createElement, context) {
     let items = this.$slots['page-swipe-item'],
         length = items.length;
-    return createElement(VuePageSwipeList, {
+    return createElement(PageSwipeList, {
       props: {
-        pages: items
+        pages: items,
+        passIndex: this.passIndex
       }
     }, items.map((item, $index) => {
-      return createElement(VuePageSwipeItem, {
+      return createElement(PageSwipeItem, {
         props: {
           curIdx: this.currentIndex,
           index: $index,
