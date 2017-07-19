@@ -13,14 +13,14 @@
 </template> -->
 
 <script>
-import VuePageSwipeList from './page-swipe-list.vue';
-import VuePageSwipeItem from './page-swipe-item.vue';
+import PageSwipeList from './page-swipe-list.vue';
+import PageSwipeItem from './page-swipe-item.vue';
 
 export default {
   name: 'page-swipe',
   components: {
-    'page-swipe-list': VuePageSwipeList,
-    'page-swipe-item': VuePageSwipeItem
+    PageSwipeList,
+    PageSwipeItem
   },
   data() {
     return {
