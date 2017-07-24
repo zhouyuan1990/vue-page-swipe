@@ -6,8 +6,7 @@ a page swipe using vue.js (using slot and render)
 
 ## Import and register module
 ```JavaScript
-import { PageSwipe } from '../dist/vue-page-swipe.js';
-
+import PageSwipe from '../dist/vue-page-swipe.js';
 Vue.component('page-swipe', PageSwipe);
 ```
 ## Using "page-swipe" tag simply
