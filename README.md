@@ -4,10 +4,14 @@ a page swipe using vue.js (using slot and render)
 
 # Using vue-page-swipe
 
+## Install
+```bash
+$ npm install vue-page-swipe
+```
+
 ## Import and register module
 ```JavaScript
-import { PageSwipe } from '../dist/vue-page-swipe.js';
-
+import PageSwipe from 'vue-page-swipe';
 Vue.component('page-swipe', PageSwipe);
 ```
 ## Using "page-swipe" tag simply
@@ -23,10 +27,10 @@ Vue.component('page-swipe', PageSwipe);
 
 Run example:
 ```bash
-$npm run dev
+$ npm run dev
 ```
 
 Build src to /dist
 ```bash
-$npm run build
+$ npm run build
 ```
