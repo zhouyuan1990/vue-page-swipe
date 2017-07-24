@@ -33,8 +33,16 @@ export default {
     }
   },
   render(createElement, context) {
-    let items = this.$slots['page-swipe-item'],
-        length = items.length;
+    let items = this.$slots.default;
+    if (!items) {
+      console.warn("[VuePageSwipe]: No tag found under <page-swipe>");
+      return;
+    }
+    // Filter out empty node in items, after set preserveWhitespace: false in vue-loader config, these lines are commented out
+    // items = items.filter( item => {
+    //   return item.tag != undefined;
+    // });
+    let length = items.length;
     return createElement(PageSwipeList, {
       props: {
         pages: items,

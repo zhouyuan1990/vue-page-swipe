@@ -12,7 +12,7 @@
           :class="{ 'is-active': $index === index }"
           :key="$index">
         <a @click="moveTo($index)"></a>
-        <div>{{ page.data.attrs['swipe-title'] }}</div>
+        <div v-if="page.data.attrs && page.data.attrs['swipe-title']">{{ page.data.attrs['swipe-title'] }}</div>
       </li>
     </ul>
   </div>

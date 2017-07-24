@@ -14,9 +14,9 @@ Vue.component('page-swipe', PageSwipe);
 ## Using "page-swipe" tag simply
 ```HTML
 <page-swipe>
-  <div slot="page-swipe-item" swipe-title="page1" class="page1">Page1</div>
-  <div slot="page-swipe-item" swipe-title="page2" class="page2">Page2</div>
-  <div slot="page-swipe-item" swipe-title="page3" class="page3">Page3</div>
+  <div swipe-title="page1" class="page1">Page1</div>
+  <div swipe-title="page2" class="page2">Page2</div>
+  <div swipe-title="page3" class="page3">Page3</div>
 </page-swipe>
 ```
 
