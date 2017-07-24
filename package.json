@@ -1,9 +1,8 @@
 {
   "name": "vue-page-swipe",
   "version": "1.0.0",
-  "description": "A Vue.js project",
-  "author": "Arki Zhou",
-  "private": true,
+  "description": "A page swipe using Vue.js",
+  "author": "Arki Zhou https://github.com/zhouyuan1990",
   "scripts": {
     "dev": "node build/dev-server.js",
     "start": "node build/dev-server.js",
@@ -12,6 +11,12 @@
   "dependencies": {
     "vue": "^2.3.3"
   },
+  "keywords": [
+    "vue",
+    "swipe",
+    "scrolling",
+    "slider"
+  ],
   "devDependencies": {
     "autoprefixer": "^7.1.2",
     "babel-core": "^6.22.1",
@@ -55,5 +60,15 @@
     "> 1%",
     "last 2 versions",
     "not ie <= 8"
-  ]
+  ],
+  "main": "dist/vue-page-swipe",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zhouyuan1990/vue-page-swipe.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zhouyuan1990/vue-page-swipe/issues"
+  },
+  "homepage": "https://github.com/zhouyuan1990/vue-page-swipe#readme"
 }
