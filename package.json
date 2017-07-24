@@ -2,7 +2,10 @@
   "name": "vue-page-swipe",
   "version": "1.0.0",
   "description": "A page swipe using Vue.js",
-  "author": "Arki Zhou https://github.com/zhouyuan1990",
+  "authors": [
+    "Arki Zhou https://github.com/zhouyuan1990",
+    "Pickcle Xiao https://github.com/pickcle"
+  ],
   "scripts": {
     "dev": "node build/dev-server.js",
     "start": "node build/dev-server.js",
