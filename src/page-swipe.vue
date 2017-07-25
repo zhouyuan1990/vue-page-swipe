@@ -35,6 +35,10 @@ export default {
     allowLoop: {
       type: Boolean,
       default: false
+    },
+    direction: {
+      type: String,
+      default: 'vertical'
     }
   },
   methods: {
@@ -43,6 +47,12 @@ export default {
     }
   },
   render(createElement, context) {
+    let direction = this.direction;
+    if (direction != 'vertical' && direction != 'horizontal') {
+      console.warn("[VuePageSwipe]: direction is not valid, it should be \"vertical\" or \"horizontal\"");
+      direction = 'vertical';
+    }
+
     let items = this.$slots.default;
     if (!items) {
       console.warn("[VuePageSwipe]: No tag found under <page-swipe>");
@@ -58,7 +68,8 @@ export default {
         passIndex: this.passIndex,
         showIndicators: this.showIndicators,
         allowLoop: this.allowLoop
-      }
+      },
+      'class': 'direction-' + direction
     }, items.map((item, $index) => {
       return createElement(PageSwipeItem, {
         props: {

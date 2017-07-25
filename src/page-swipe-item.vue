@@ -40,7 +40,10 @@ export default {
 .item-easing {
   transition: transform 1000ms cubic-bezier(0.550, 0.085, 0.000, 0.990);
 }
-.moveOut {
+.direction-vertical .moveOut {
   transform: translate3d(0px, -100%, 0px);
+}
+.direction-horizontal .moveOut {
+  transform: translate3d(-100%, 0px, 0px);
 }
 </style>

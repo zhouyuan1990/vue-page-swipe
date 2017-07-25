@@ -36,10 +36,16 @@ $ npm run build
 ```
 
 # Options
+## For page-swipe 
 | Option | Description |
 | ----- | ----- |
 | showIndicators | Boolean (default: true) - Defines whether indicators are shown or not. |
-| allowCycles | Boolean (default: false) - If set to true, scrolling up in the first page will scroll to the last page, and scrolling down in the last page will scroll to the first page.
+| allowLoop | Boolean (default: false) - If set to true, scrolling up in the first page will scroll to the last page, and scrolling down in the last page will scroll to the first page. |
+| direction | String (default: vertical) - Defines the scroll direction is vertical or horizontal |
+## For children under page-swipe
+| Option | Description |
+| ----- | ----- |
+| swipe-title | String - Defines the text shown beside indicators while hovering on indicators. |
 
 # Demo
 ![img](https://raw.githubusercontent.com/zhouyuan1990/vue-page-swipe/master/demo.gif)

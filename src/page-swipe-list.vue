@@ -144,7 +144,7 @@ export default {
       this.moveTo(this.pages.length - 1);
     },
     moveTo(index) {
-      if (!this.isMoving() && index != this.index) {
+      if (index != this.index) {
         lastAnimationTime = new Date().getTime();
         this.index = index;
         this.passIndex && this.passIndex(this.index);
