@@ -34,3 +34,6 @@ Build src to /dist
 ```bash
 $ npm run build
 ```
+
+# Demo
+![img](https://raw.githubusercontent.com/zhouyuan1990/vue-page-swipe/master/demo.gif)
