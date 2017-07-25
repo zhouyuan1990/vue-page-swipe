@@ -6,7 +6,7 @@
     <ul class="main">
       <slot name="item"></slot>
     </ul>
-    <ul class="indicators" ref="indicators">
+    <ul class="indicators" ref="indicators" v-show="showIndicators">
       <li class="indicator"
           v-for="(page, $index) in pages"
           :class="{ 'is-active': $index === index }"
@@ -40,6 +40,14 @@ export default {
     passIndex: {
       type: Function,
       default: function () {}
+    },
+    showIndicators: {
+      type: Boolean,
+      default: true
+    },
+    allowLoop: {
+      type: Boolean,
+      default: false
     }
   },
   methods: {
@@ -106,10 +114,10 @@ export default {
             this.next()
             break;
         case 36:  //Home
-            this.moveTo(0);
+            this.moveToFirst();
             break;
         case 35:  //End
-            this.moveTo(this.pages.length - 1);
+            this.moveToLast();
             break;
         default:
             return;
@@ -118,19 +126,28 @@ export default {
     next() {
       if (this.index < this.pages.length - 1) {
         this.moveTo(this.index + 1);
+      } else if (this.allowLoop) {
+        this.moveToFirst();
       }
     },
     prev() {
       if (this.index > 0) {
         this.moveTo(this.index - 1);
+      } else if (this.allowLoop) {
+        this.moveToLast();
       }
+    },
+    moveToFirst() {
+      this.moveTo(0);
+    },
+    moveToLast() {
+      this.moveTo(this.pages.length - 1);
     },
     moveTo(index) {
       if (!this.isMoving() && index != this.index) {
         lastAnimationTime = new Date().getTime();
         this.index = index;
         this.passIndex && this.passIndex(this.index);
-        // this.$parent.passIndex(this.index);
       }
     }
   }

@@ -27,6 +27,16 @@ export default {
       currentIndex: 0
     }
   },
+  props: {
+    showIndicators: {
+      type: Boolean,
+      default: true
+    },
+    allowLoop: {
+      type: Boolean,
+      default: false
+    }
+  },
   methods: {
     passIndex(idx) {
       this.currentIndex = idx;
@@ -45,7 +55,9 @@ export default {
     return createElement(PageSwipeList, {
       props: {
         pages: items,
-        passIndex: this.passIndex
+        passIndex: this.passIndex,
+        showIndicators: this.showIndicators,
+        allowLoop: this.allowLoop
       }
     }, items.map((item, $index) => {
       return createElement(PageSwipeItem, {
