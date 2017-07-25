@@ -35,5 +35,11 @@ Build src to /dist
 $ npm run build
 ```
 
+# Options
+| Option | Description |
+| ----- | ----- |
+| showIndicators | Boolean (default: true) - Defines whether indicators are shown or not. |
+| allowCycles | Boolean (default: false) - If set to true, scrolling up in the first page will scroll to the last page, and scrolling down in the last page will scroll to the first page.
+
 # Demo
 ![img](https://raw.githubusercontent.com/zhouyuan1990/vue-page-swipe/master/demo.gif)
