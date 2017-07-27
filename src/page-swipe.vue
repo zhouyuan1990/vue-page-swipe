@@ -1,6 +1,6 @@
 <!-- <template>
   <div id="app">
-    <page-swipe-list :pages="pages">
+    <page-swipe-list @changeIndex="changeIndex" :pages="pages">
       <page-swipe-item v-for="(page, $index) in pages"
                        slot="item"
                        :key="$index"
@@ -42,7 +42,7 @@ export default {
     }
   },
   methods: {
-    passIndex(idx) {
+    changeIndex(idx) {
       this.currentIndex = idx;
     }
   },
@@ -65,9 +65,11 @@ export default {
     return createElement(PageSwipeList, {
       props: {
         pages: items,
-        passIndex: this.passIndex,
         showIndicators: this.showIndicators,
         allowLoop: this.allowLoop
+      },
+      on: {
+        changeIndex: this.changeIndex
       },
       'class': 'direction-' + direction
     }, items.map((item, $index) => {

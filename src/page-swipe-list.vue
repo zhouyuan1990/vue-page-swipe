@@ -37,10 +37,6 @@ export default {
         return [];
       }
     },
-    passIndex: {
-      type: Function,
-      default: function () {}
-    },
     showIndicators: {
       type: Boolean,
       default: true
@@ -147,7 +143,7 @@ export default {
       if (index != this.index) {
         lastAnimationTime = new Date().getTime();
         this.index = index;
-        this.passIndex && this.passIndex(this.index);
+        this.$emit('changeIndex', this.index);
       }
     }
   }
